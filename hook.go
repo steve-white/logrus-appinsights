@@ -26,7 +26,7 @@ var levelMap = map[logrus.Level]appinsights.SeverityLevel{
 
 // AppInsightsHook is a logrus hook for Application Insights
 type AppInsightsHook struct {
-	client appinsights.TelemetryClient
+	Client appinsights.TelemetryClient
 
 	async        bool
 	levels       []logrus.Level
