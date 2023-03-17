@@ -1,0 +1,29 @@
+# code.cloudfoundry.org/clock v0.0.0-20171121005523-e9dc86bbf0e5
+## explicit
+code.cloudfoundry.org/clock
+# github.com/Microsoft/ApplicationInsights-Go v0.3.1-0.20171018060007-98ac7ca026c2
+## explicit
+github.com/Microsoft/ApplicationInsights-Go/appinsights
+# github.com/davecgh/go-spew v1.1.0
+## explicit
+github.com/davecgh/go-spew/spew
+# github.com/pmezard/go-difflib v1.0.0
+## explicit
+github.com/pmezard/go-difflib/difflib
+# github.com/sirupsen/logrus v1.0.4
+## explicit
+github.com/sirupsen/logrus
+# github.com/stretchr/testify v1.2.0
+## explicit
+github.com/stretchr/testify/assert
+# golang.org/x/crypto v0.0.0-20180123095555-3d37316aaa6b
+## explicit
+golang.org/x/crypto/ssh/terminal
+# golang.org/x/sys v0.0.0-20180125145336-03467258950d
+## explicit
+golang.org/x/sys/unix
+golang.org/x/sys/windows
+# gopkg.in/airbrake/gobrake.v2 v2.0.9
+## explicit
+# gopkg.in/gemnasium/logrus-airbrake-hook.v2 v2.1.2
+## explicit

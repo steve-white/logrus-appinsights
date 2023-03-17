@@ -3,7 +3,6 @@ package main
 import (
 	"time"
 
-	"github.com/jjcollinge/logrus-appinsights"
 	log "github.com/sirupsen/logrus"
 )
 
