@@ -1,9 +1,9 @@
 # code.cloudfoundry.org/clock v0.0.0-20171121005523-e9dc86bbf0e5
 ## explicit
 code.cloudfoundry.org/clock
-# github.com/Microsoft/ApplicationInsights-Go v0.3.1-0.20171018060007-98ac7ca026c2
+# github.com/microsoft/ApplicationInsights-Go v0.3.1-0.20171018060007-98ac7ca026c2
 ## explicit
-github.com/Microsoft/ApplicationInsights-Go/appinsights
+github.com/microsoft/ApplicationInsights-Go/appinsights
 # github.com/davecgh/go-spew v1.1.0
 ## explicit
 github.com/davecgh/go-spew/spew

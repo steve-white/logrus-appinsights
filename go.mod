@@ -3,7 +3,7 @@ module github.com/steve-white/logrus-appinsights
 go 1.19
 
 require (
-	github.com/Microsoft/ApplicationInsights-Go v0.3.1-0.20171018060007-98ac7ca026c2
+	github.com/microsoft/ApplicationInsights-Go v0.3.1-0.20171018060007-98ac7ca026c2
 	github.com/sirupsen/logrus v1.0.4
 	github.com/stretchr/testify v1.2.0
 )
