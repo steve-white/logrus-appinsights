@@ -5,6 +5,7 @@ import (
 	"fmt"
 
 	"github.com/microsoft/ApplicationInsights-Go/appinsights"
+	"github.com/microsoft/ApplicationInsights-Go/appinsights/contracts"
 	"github.com/sirupsen/logrus"
 )
 
@@ -16,7 +17,7 @@ var defaultLevels = []logrus.Level{
 	logrus.InfoLevel,
 }
 
-var levelMap = map[logrus.Level]appinsights.SeverityLevel{
+var levelMap = map[logrus.Level]contracts.SeverityLevel{
 	logrus.PanicLevel: appinsights.Critical,
 	logrus.FatalLevel: appinsights.Critical,
 	logrus.ErrorLevel: appinsights.Error,
@@ -51,7 +52,7 @@ func New(name string, conf Config) (*AppInsightsHook, error) {
 	}
 	telemetryClient := appinsights.NewTelemetryClientFromConfig(telemetryConf)
 	if name != "" {
-		telemetryClient.Context().Cloud().SetRoleName(name)
+		//telemetryClient.Context().Cloud().SetRoleInstance(name)
 	}
 	return &AppInsightsHook{
 		Client:       telemetryClient,
@@ -71,7 +72,7 @@ func NewWithAppInsightsConfig(name string, conf *appinsights.TelemetryConfigurat
 	}
 	telemetryClient := appinsights.NewTelemetryClientFromConfig(conf)
 	if name != "" {
-		telemetryClient.Context().Cloud().SetRoleName(name)
+		//telemetryClient.Context()..SetRoleInstance(name)
 	}
 	return &AppInsightsHook{
 		Client:       telemetryClient,
@@ -122,7 +123,7 @@ func (hook *AppInsightsHook) fire(entry *logrus.Entry) error {
 	if err != nil {
 		return err
 	}
-	hook.Client.TrackTraceTelemetry(trace)
+	hook.Client.Track(trace)
 	return nil
 }
 
@@ -147,10 +148,10 @@ func (hook *AppInsightsHook) buildTrace(entry *logrus.Entry) (*appinsights.Trace
 			v = formatData(v) // use default formatter
 		}
 		vStr := fmt.Sprintf("%v", v)
-		trace.SetProperty(k, vStr)
+		trace.Properties[k] = vStr
 	}
-	trace.SetProperty("source_level", entry.Level.String())
-	trace.SetProperty("source_timestamp", entry.Time.String())
+	trace.Properties["source_level"] = entry.Level.String()
+	trace.Properties["source_timestamp"] = entry.Time.String()
 	return trace, nil
 }
 
