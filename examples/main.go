@@ -4,6 +4,7 @@ import (
 	"time"
 
 	log "github.com/sirupsen/logrus"
+	logrus_appinsights "github.com/steve-white/logrus-appinsights"
 )
 
 func init() {

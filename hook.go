@@ -54,7 +54,7 @@ func New(name string, conf Config) (*AppInsightsHook, error) {
 		telemetryClient.Context().Cloud().SetRoleName(name)
 	}
 	return &AppInsightsHook{
-		client:       telemetryClient,
+		Client:       telemetryClient,
 		levels:       defaultLevels,
 		ignoreFields: make(map[string]struct{}),
 		filters:      make(map[string]func(interface{}) interface{}),
@@ -74,7 +74,7 @@ func NewWithAppInsightsConfig(name string, conf *appinsights.TelemetryConfigurat
 		telemetryClient.Context().Cloud().SetRoleName(name)
 	}
 	return &AppInsightsHook{
-		client:       telemetryClient,
+		Client:       telemetryClient,
 		levels:       defaultLevels,
 		ignoreFields: make(map[string]struct{}),
 		filters:      make(map[string]func(interface{}) interface{}),
@@ -122,7 +122,7 @@ func (hook *AppInsightsHook) fire(entry *logrus.Entry) error {
 	if err != nil {
 		return err
 	}
-	hook.client.TrackTraceTelemetry(trace)
+	hook.Client.TrackTraceTelemetry(trace)
 	return nil
 }
 

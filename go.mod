@@ -1,4 +1,4 @@
-module steve-white/logrus-appinsights
+module github.com/steve-white/logrus-appinsights
 
 go 1.19
 
